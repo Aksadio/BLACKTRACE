@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#070a0f">
+  <meta name="description" content="BLACKTRACE // ZERO-DAY — harmless cyber-operations simulation prank.">
+  <title>BLACKTRACE // ZERO-DAY</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="boot" class="boot-screen">
+    <div class="boot-logo">BLACKTRACE</div>
+    <div class="boot-sub">ADVANCED CYBER OPERATIONS PLATFORM</div>
+    <div class="boot-line" id="bootLine">INITIALIZING...</div>
+    <div class="boot-progress"><span id="bootBar"></span></div>
+  </div>
+
+  <main id="app" class="app hidden" aria-label="BLACKTRACE simulation">
+    <header class="topbar">
+      <div class="brand"><span class="brand-dot"></span>BLACKTRACE <span>// ZERO-DAY</span></div>
+      <div class="top-status"><span class="pulse"></span> SIMULATION MODE <span id="clock">00:00:00</span></div>
+    </header>
+
+    <section class="dashboard">
+      <aside class="panel left-panel">
+        <div class="panel-title">OPERATION</div>
+        <div class="op-name">ZERO-DAY</div>
+        <div class="status-chip">ACTIVE <small>[SIMULATION]</small></div>
+        <div class="metric"><span>THREAT LEVEL</span><b id="threatLevel">ELEVATED</b></div>
+        <div class="metric"><span>SESSION</span><b id="sessionId">BT-7F29A</b></div>
+        <div class="metric"><span>ENCRYPTION</span><b>AES-256 [SIM]</b></div>
+
+        <div class="panel-title section-gap">OPERATION TIMELINE</div>
+        <ol class="timeline" id="timeline"></ol>
+
+        <div class="panel-title section-gap">CONTROLS</div>
+        <div class="controls">
+          <button id="pauseBtn">PAUSE</button>
+          <button id="soundBtn">SOUND: ON</button>
+          <button id="fullscreenBtn">FULLSCREEN</button>
+          <button id="exitBtn" class="danger">EXIT PRANK</button>
+        </div>
+      </aside>
+
+      <section class="center-column">
+        <div class="panel terminal-panel">
+          <div class="terminal-head"><span>LIVE TERMINAL</span><span id="terminalState">STREAMING</span></div>
+          <div id="terminal" class="terminal" aria-live="polite"></div>
+          <div class="terminal-input-row"><span>&gt;</span><input id="commandInput" autocomplete="off" spellcheck="false" aria-label="Simulation command" placeholder="type a simulation command..." /></div>
+          <div class="command-hint">Try: <code>whoami</code> · <code>sudo coffee</code> · <code>hack nasa</code> · <code>help</code></div>
+        </div>
+
+        <div class="lower-grid">
+          <div class="panel map-panel">
+            <div class="panel-title">VIRTUAL NETWORK MAP</div>
+            <canvas id="mapCanvas" width="760" height="310"></canvas>
+            <div class="map-legend"><span><i class="node cyan"></i>virtual node</span><span><i class="node red"></i>anomaly</span><span><i class="line"></i>simulated route</span></div>
+          </div>
+          <div class="panel nexus-panel">
+            <div class="panel-title">NEXUS AI</div>
+            <div class="nexus-label">COGNITIVE ENGINE</div>
+            <div class="bar-row"><span>Pattern recognition</span><b id="p1">82%</b><i><em id="p1bar" style="width:82%"></em></i></div>
+            <div class="bar-row"><span>Threat correlation</span><b id="p2">91%</b><i><em id="p2bar" style="width:91%"></em></i></div>
+            <div class="bar-row"><span>Route prediction</span><b id="p3">64%</b><i><em id="p3bar" style="width:64%"></em></i></div>
+            <div class="bar-row"><span>Decision confidence</span><b id="p4">99%</b><i><em id="p4bar" style="width:99%"></em></i></div>
+            <div class="nexus-message" id="nexusMessage">Analyzing virtual environment...</div>
+          </div>
+        </div>
+      </section>
+
+      <aside class="panel right-panel">
+        <div class="panel-title">SYSTEM ANALYSIS</div>
+        <div class="system-grid">
+          <span>CPU LOAD</span><b id="cpu">42%</b>
+          <span>MEMORY</span><b id="mem">61%</b>
+          <span>NETWORK</span><b>SECURE</b>
+          <span>FIREWALL</span><b>ACTIVE</b>
+          <span>ENCRYPTION</span><b>ENABLED</b>
+        </div>
+        <div class="panel-title section-gap">THREAT EVENTS</div>
+        <div class="big-number" id="threatEvents">03</div>
+        <div class="metric"><span>TRACE STATUS</span><b id="traceStatus">UNDETECTED</b></div>
+        <div class="metric"><span>VIRTUAL IP</span><b id="virtualIp">10.77.24.91</b></div>
+        <div class="metric"><span>TRACE ID</span><b id="traceId">TR-8841</b></div>
+        <div class="warning-box" id="warningBox">NO REAL SYSTEM DATA IS ACCESSED.</div>
+      </aside>
+    </section>
+  </main>
+
+  <div id="reveal" class="reveal hidden">
+    <div class="reveal-card">
+      <div class="reveal-glitch">BLACKTRACE</div>
+      <h1>YOU GOT PRANKED <span>😂</span></h1>
+      <p>This was a harmless browser simulation.</p>
+      <div class="safety-list">
+        <span>✓ No files were accessed</span>
+        <span>✓ No passwords were collected</span>
+        <span>✓ No network was scanned</span>
+        <span>✓ No system settings were changed</span>
+        <span>✓ No hacking occurred</span>
+      </div>
+      <div id="nexusFinal" class="nexus-final"></div>
+      <button id="closeReveal">EXIT PRANK</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
