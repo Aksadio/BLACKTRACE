@@ -1,0 +1,2 @@
+# BLACKTRACE uses only Python's standard library.
+# No pip dependencies are required to run the app.
